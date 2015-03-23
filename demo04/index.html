@@ -15,17 +15,17 @@
 	    <li ng-repeat="user in main.users">{{ user.firstName | capitalize }} {{ user.lastName | capitalize }}</li>
 	</ul>
 
-	<form role="form" name="createUserForm" ng-submit="main.createUser(user)" novalidate>
+	<form role="form" name="createUserForm" ng-submit="main.createUser(main.user)" novalidate>
         <br>
         
         <div class="form-group">
             <label>First Name</label>
-            <input type="text" class="form-control" ng-model="user.firstName" required>
+            <input type="text" class="form-control" ng-model="main.user.firstName" required>
         </div>
         
         <div class="form-group">
             <label>Last Name</label>
-            <input type="text" class="form-control" ng-model="user.lastName" required>
+            <input type="text" class="form-control" ng-model="main.user.lastName" required>
         </div>
 
         <button type="submit" class="btn btn-primary" ng-disabled="createUserForm.$invalid">Submit</button>

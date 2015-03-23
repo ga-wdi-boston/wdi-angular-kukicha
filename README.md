@@ -41,6 +41,8 @@ With a partner, create a filter for your task list.
 - ng-submit
 - ng-disabled
 
+#### Exercise
+
 Create a form so that you can add items to your task list.
 
 ### Demo 05
@@ -61,6 +63,12 @@ Task
     - category_id:integer
 
 Update your Angular app so that it pulls in tasks from the API.
+
+`rails-api new appname --database=postgresql`
+`rails g scaffold Category name:string`
+`rails g scaffold Task name:string status:integer category_id:integer`
+
+    enum status: [ :open, :complete ]
 
 ### Demo 06
 

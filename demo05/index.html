@@ -9,10 +9,10 @@
 <body ng-app="Demo">
 
 <div class="container" ng-controller="MainCtrl as main">
-    <h2>Users</h2>
+    <h2>Tasks</h2>
     
 	<ul>
-	    <li ng-repeat="user in main.users">{{ user.firstName }} {{ user.lastName }}</li>
+	    <li ng-repeat="task in main.tasks">{{ task.name }}</li>
 	</ul>
 </div>
 

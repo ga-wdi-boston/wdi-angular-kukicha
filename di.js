@@ -16,17 +16,19 @@ function JVCRadio() {
     };
 }
 
-function Auto(color) {
+function Auto(color, radio) {
     this.wheels = 4;
     this.color = color;
 
-    this.radio = new SonyRadio();
+    this.radio = radio;
 }
 
-var car = new Auto('blue');
+var jvcRadio = new JVCRadio();
+var car = new Auto('blue', jvcRadio);
 
 console.log(car.radio.playSong());
 
-var truck = new Auto('red');
+var sonyRadio = new SonyRadio();
+var truck = new Auto('red', sonyRadio);
 
 console.log(truck.radio.playSong());
