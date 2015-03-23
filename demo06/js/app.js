@@ -2,47 +2,47 @@
     'use strict';
 
     angular
-        .module('Demo', []);
+        .module('TaskManager', []);
 
     angular
-        .module('Demo')
-        .controller('MainCtrl', MainCtrl);
+        .module('TaskManager')
+        .controller('TaskCtrl', TaskCtrl);
 
-    MainCtrl.$inject = ['$http'];
+    TaskCtrl.$inject = ['$http'];
     
-    function MainCtrl($http) {
+    function TaskCtrl($http) {
         var vm = this;
 
-        $http.get('http://localhost:3000/users').success(function(response) {
-            vm.users = response;
+        $http.get('http://localhost:3000/tasks').success(function(response) {
+            vm.tasks = response;
         });
 
-        vm.upsertUser = function(user) {
+        vm.upsertTask = function(task) {
             var params = {
-                user: user
+                task: task
             };
             
-            if (user.id) {
-                $http.put('http://localhost:3000/users/' + user.id, params);
+            if (task.id) {
+                $http.put('http://localhost:3000/tasks/' + task.id, params);
             } else {
-                $http.post('http://localhost:3000/users', params).success(function(response) {
-                    vm.users.push(response);
+                $http.post('http://localhost:3000/tasks', params).success(function(response) {
+                    vm.tasks.push(response);
                 });
             }
 
-            vm.user = {};
+            vm.task = {};
         };
 
-        vm.editUser = function(user) {
-            vm.user = user;
+        vm.editTask = function(task) {
+            vm.task = task;
         };
 
-        vm.deleteUser = function(user) {
-            $http.delete('http://localhost:3000/users/' + user.id).success(function(response) {
-                // remove from users array by id
-                for (var i = 0; i < vm.users.length; i++){
-                    if (vm.users[i].id === user.id) {
-                        vm.users.splice(i, 1);
+        vm.deleteTask = function(task) {
+            $http.delete('http://localhost:3000/tasks/' + task.id).success(function(response) {
+                // remove from tasks array by id
+                for (var i = 0; i < vm.tasks.length; i++){
+                    if (vm.tasks[i].id === task.id) {
+                        vm.tasks.splice(i, 1);
 
                         break;
                     }
