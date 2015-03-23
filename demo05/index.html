@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Angular Demo 05</title>
+<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+<script src="bower_components/angular/angular.js"></script>
+</head>
+<body ng-app="Demo">
+
+<div class="container" ng-controller="MainCtrl as main">
+    <h2>Users</h2>
+    
+	<ul>
+	    <li ng-repeat="user in main.users">{{ user.firstName }} {{ user.lastName }}</li>
+	</ul>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

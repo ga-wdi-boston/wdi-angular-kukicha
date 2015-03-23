@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Angular Demo 06</title>
+<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+<script src="bower_components/angular/angular.js"></script>
+</head>
+<body ng-app="Demo">
+
+<div class="container" ng-controller="MainCtrl as main">
+    <h2>Users</h2>
+    
+	<ul>
+	    <li ng-repeat="user in users">{{ user.firstName }} {{ user.lastName }} <a ng-click="editUser(user)">update</a> <a ng-click="deleteUser(user)">delete</a></li>
+	</ul>
+
+    <form role="form" name="upsertUserForm" ng-submit="upsertUser(user)" novalidate>
+        <br>
+        
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" ng-model="user.firstName" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" ng-model="user.lastName" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary" ng-disabled="upsertUserForm.$invalid">Submit</button>
+    </form>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

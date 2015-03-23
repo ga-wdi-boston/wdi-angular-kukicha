@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Angular Demo 01</title>
+<script src="bower_components/angular/angular.js"></script>
+</head>
+<body ng-app>
+
+<!-- bind an expression -->
+<h1>1 + 2 = {{ 1 + 1 }}</h1>
+
+<!-- add a person object to the scope using ng-init directive -->
+<!-- bind to a property on the scope object -->
+<h1 ng-init="person = {name: 'dan'}">Hello {{ person.name }}</h1>
+
+<!-- input bound to a property on the scope using ng-model directive -->
+<p><input type="text" ng-model="person.name"></p>
+
+</body>
+</html>

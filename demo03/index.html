@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Angular Demo 03</title>
+<script src="bower_components/angular/angular.js"></script>
+</head>
+<body ng-app="Demo">
+
+<div ng-controller="MainCtrl as main">
+	<input type="text" ng-model="search" placeholder="Search">
+
+	<ul>
+	    <li ng-repeat="user in main.users | filter:search">{{ user.firstName }} {{ user.lastName }}</li>
+	</ul>
+
+    <!-- filter:search:true will search for full words -->
+
+    <p>{{ main.lowercase | capitalize }}</p>
+</div>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>

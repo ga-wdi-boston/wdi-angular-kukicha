@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Angular Demo 02</title>
+<script src="bower_components/angular/angular.js"></script>
+</head>
+<body ng-app="Demo">
+
+<div ng-controller="MainCtrl as main">
+    <h1>{{ main.greeting }} {{ main.person.firstName }} {{ main.person.lastName }}</h1>
+
+    <p>Fruits: <span ng-repeat="fruit in main.fruits">{{ fruit }} </span></p>
+</div>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
