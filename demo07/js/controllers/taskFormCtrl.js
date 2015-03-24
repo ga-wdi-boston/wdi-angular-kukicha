@@ -22,6 +22,10 @@
             });
         };
 
+        vm.cancel = function() {
+            resetForm();
+        };
+
         function handleErrors(errObj) {
             var errString = '';
 
@@ -33,13 +37,11 @@
         }
 
         function resetForm() {
-            vm.task = {
-                name: ''
-            };
+            TaskFactory.setTask({name: ''});
 
             vm.serverErrors = false;
         }
-
+        
         resetForm();
     }
 

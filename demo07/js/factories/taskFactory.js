@@ -11,8 +11,8 @@
         var tasks = [];
         var task = {};
 
-        function setTask(task) {
-            task = task;
+        function setTask(newTask) {
+            angular.copy(newTask, task);
         }
 
         function getTasks() {
@@ -28,7 +28,8 @@
             };
             
             if (task.id) {
-                return $http.put(ServerUrl + '/tasks/' + task.id, params);
+                return $http.put(ServerUrl + '/tasks/' + task.id, params)
+                    .then(getTasks);
             } else {
                 return $http.post(ServerUrl + '/tasks', params)
                     .then(function(response) {
@@ -53,9 +54,9 @@
         }
 
         return {
-            setTask: setTask,
-            task: task,
             tasks: tasks,
+            task: task,
+            setTask: setTask,
             getTasks: getTasks,
             upsertTask: upsertTask,
             deleteTask: deleteTask
