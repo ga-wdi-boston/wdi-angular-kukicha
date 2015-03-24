@@ -2,7 +2,6 @@
   "name": "jqeury-promises",
   "version": "0.0.1",
   "dependencies": {
-    "jquery": "~2.1.3",
-    "q": "~2.0.2"
+    "jquery": "~2.1.3"
   }
 }
