@@ -7,7 +7,7 @@
     angular
         .module('Demo')
         .controller('MainCtrl', MainCtrl)
-        .directive('gaLorem', gaLorem)
+        .directive('gaGreeting', gaGreeting)
         .directive('gaButton', gaButton)
         .directive('gaAnotherButton', gaAnotherButton);
 
@@ -18,20 +18,20 @@
             name: 'Dan'
         };
 
-        vm.clickAction = function(value) {
-            alert(value);
+        vm.clickAction = function(foo) {
+            alert(foo);
         };
     }
 
-    function gaLorem() {
+    function gaGreeting() {
         return {
             restrict: 'EA',
 
-            templateUrl: 'templates/lorem.html',
+            templateUrl: 'templates/greeting.html',
 
             scope: {
-                greeting: '@', // one way, outside in
-                person: '='
+                greeting: '@', // one way property, outside in
+                person: '=' // two way binding for property
             }
         };
     }
