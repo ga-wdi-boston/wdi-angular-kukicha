@@ -84,8 +84,13 @@ CRUD for tasks
 ### Demo 08
 
 - directives
+    - templates, bindings, actions
 
 #### Exercise
 
 Create your own element directives (template, property, action)
 
+### Demo 09
+
+- directives
+    - controllers

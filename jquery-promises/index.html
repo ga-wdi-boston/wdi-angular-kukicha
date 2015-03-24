@@ -45,13 +45,13 @@ function slower() {
     return deferred;
 }
 
-slow().done(function(value) {
-    console.log(value);
-});
+// slow().done(function(value) {
+//     console.log(value);
+// });
 
-slower().done(function(value) {
-    console.log(value);
-});
+// slower().done(function(value) {
+//     console.log(value);
+// });
 
 $.when(slow(), slower()).then(function(slowVal, slowerVal) {
     console.log(slowVal, slowerVal);
