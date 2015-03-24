@@ -37,14 +37,14 @@
             if (task.id) {
                 $http.put('http://localhost:3000/tasks/' + task.id, params)
                     .error(function(response) {
-                        vm.errors = handleErrors(response);
+                        console.log(handleErrors(response));
                     });
             } else {
                 $http.post('http://localhost:3000/tasks', params)
                     .success(function(response) {
                         vm.tasks.push(response);
                     }).error(function(response) {
-                        vm.errors = handleErrors(response);
+                        console.log(handleErrors(response));
                     });
             }
 

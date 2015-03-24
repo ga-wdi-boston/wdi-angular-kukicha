@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Promises</title>
+</head>
+<body>
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script>
+    
+var deferred = $.Deferred();
+
+deferred.done(function(value) {
+   console.log('done: ' + value);
+});
+
+deferred.fail(function(value) {
+   console.log('fail: ' + value);
+});
+
+deferred.always(function(value) {
+   console.log('always: ' + value);
+});
+
+deferred.resolve('hello world');
+
+// function slow() {
+//     var deferred = $.Deferred();
+
+//     setTimeout(function() {
+//         deferred.resolve('slow');
+//     }, 2000);
+
+//     return deferred;
+// }
+
+// function slower() {
+//     var deferred = $.Deferred();
+
+//     setTimeout(function() {
+//         deferred.resolve('slower');
+//     }, 3000);
+
+//     return deferred;
+// }
+
+// slow().done(function(value) {
+//     console.log(value);
+// });
+
+// slower().done(function(value) {
+//     console.log(value);
+// });
+
+// $.when(slow(), slower()).then(function(slowVal, slowerVal) {
+//     console.log(slowVal, slowerVal);
+// });
+
+</script>
+
+</body>
+</html>

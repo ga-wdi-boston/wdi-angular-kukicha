@@ -7,7 +7,4 @@
             TaskFactory.getTasks();
         });
 
-    angular.module('TaskManager')
-        .constant('ServerUrl', 'http://localhost:3000');
-
 })();
