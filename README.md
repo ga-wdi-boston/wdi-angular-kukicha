@@ -81,5 +81,11 @@ CRUD for tasks
 
 - Instructor lead refactor using factories and controllers
 
+### Demo 08
+
+- directives
+
 #### Exercise
+
+Create your own element directives (template, property, action)
 
