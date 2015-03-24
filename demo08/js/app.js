@@ -12,7 +12,12 @@
         return {
             restrict: 'EA',
 
-            templateUrl: 'templates/lorem.html'
+            templateUrl: 'templates/lorem.html',
+
+            scope: {
+                greeting: '@', // one way, outside in
+                name: '@'
+            }
         };
     }
 
