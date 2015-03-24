@@ -23,12 +23,12 @@ function Auto(color, radio) {
     this.radio = radio;
 }
 
-var jvcRadio = new JVCRadio();
-var car = new Auto('blue', jvcRadio);
+var sonyRadio = new SonyRadio();
+var car = new Auto('blue', sonyRadio);
 
 console.log(car.radio.playSong());
 
-var sonyRadio = new SonyRadio();
-var truck = new Auto('red', sonyRadio);
+var jvcRadio = new JVCRadio();
+var truck = new Auto('red', jvcRadio);
 
 console.log(truck.radio.playSong());

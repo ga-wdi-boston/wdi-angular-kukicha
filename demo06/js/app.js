@@ -13,9 +13,21 @@
     function TaskCtrl($http) {
         var vm = this;
 
-        $http.get('http://localhost:3000/tasks').success(function(response) {
-            vm.tasks = response;
-        });
+        function handleErrors(errObj) {
+            var errString = '';
+
+            angular.forEach(errObj, function(value, key) {
+                errString += key + ': ' + value;
+            });
+
+            return errString;
+        }
+
+        function resetTask() {
+            vm.task = {
+                name: ''
+            };
+        }
 
         vm.upsertTask = function(task) {
             var params = {
@@ -23,14 +35,20 @@
             };
             
             if (task.id) {
-                $http.put('http://localhost:3000/tasks/' + task.id, params);
+                $http.put('http://localhost:3000/tasks/' + task.id, params)
+                    .error(function(response) {
+                        vm.errors = handleErrors(response);
+                    });
             } else {
-                $http.post('http://localhost:3000/tasks', params).success(function(response) {
-                    vm.tasks.push(response);
-                });
+                $http.post('http://localhost:3000/tasks', params)
+                    .success(function(response) {
+                        vm.tasks.push(response);
+                    }).error(function(response) {
+                        vm.errors = handleErrors(response);
+                    });
             }
 
-            vm.task = {};
+            resetTask();
         };
 
         vm.editTask = function(task) {
@@ -49,6 +67,12 @@
                 }
             });
         };
+
+        resetTask();
+
+        $http.get('http://localhost:3000/tasks').success(function(response) {
+            vm.tasks = response;
+        });
     }
 
 })();

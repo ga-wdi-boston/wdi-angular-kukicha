@@ -62,17 +62,15 @@ Task
     - status:integer
     - category_id:integer
 
-Update your Angular app so that it pulls in tasks from the API.
-
 `rails-api new appname --database=postgresql`
 `rails g scaffold Category name:string`
 `rails g scaffold Task name:string status:integer category_id:integer`
 
-    enum status: [ :open, :complete ]
+Update your Angular app so that it pulls in tasks from the API.
 
 ### Demo 06
 
-- CRUD for users
+- CRUD for categories
 - ng-click
 
 #### Exercise
@@ -81,9 +79,7 @@ CRUD for tasks
 
 ### Demo 07
 
-- Refactor Ajax code into factories
-- Refactor MainCtrl into multiple controllers
+- Instructor lead refactor using factories and controllers
 
 #### Exercise
 
-Refactor your tasks UI code

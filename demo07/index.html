@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Angular Demo 06</title>
+<title>Angular Demo 07</title>
 <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 <script src="bower_components/angular/angular.js"></script>
 </head>
@@ -15,15 +15,15 @@
 	    <li ng-repeat="task in taskCtrl.tasks">{{ task.name }} <a ng-click="taskCtrl.editTask(task)">update</a> <a ng-click="taskCtrl.deleteTask(task)">delete</a></li>
 	</ul>
 
-    <form role="form" name="upsertTaskForm" ng-submit="taskCtrl.upsertTask(taskCtrl.task)">
+    <form role="form" name="upsertTaskForm" ng-submit="taskCtrl.upsertTask(taskCtrl.task)" novalidate>
         <br>
         
         <div class="form-group">
             <label>Name</label>
-            <input type="text" class="form-control" name="name" ng-model="taskCtrl.task.name" ng-model-options="{ updateOn: 'submit' }">
+            <input type="text" class="form-control" ng-model="taskCtrl.task.name" ng-model-options="{ updateOn: 'submit' }" required>
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" ng-disabled="upsertTaskForm.$invalid">Submit</button>
     </form>
 </div>
 
