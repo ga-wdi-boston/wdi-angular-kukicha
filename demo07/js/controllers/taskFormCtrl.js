@@ -3,18 +3,15 @@
 
     angular
         .module('TaskManager')
-        .controller('TaskCtrl', TaskCtrl);
+        .controller('TaskFormCtrl', TaskFormCtrl);
 
-    TaskCtrl.$inject = ['TaskFactory'];
+    TaskFormCtrl.$inject = ['TaskFactory'];
     
-    function TaskCtrl(TaskFactory) {
+    function TaskFormCtrl(TaskFactory) {
         var vm = this;
 
         vm.tasks = TaskFactory.tasks;
-
-        vm.editTask = function(task) {
-            vm.task = task;
-        };
+        vm.task = TaskFactory.task;
 
         vm.upsertTask = function(task) {
             TaskFactory.upsertTask(task).then(function() {
@@ -23,10 +20,6 @@
                 vm.serverErrors = true;
                 vm.serverErrorMsg = handleErrors(response.data);
             });
-        };
-
-        vm.deleteTask = function(task) {
-            TaskFactory.deleteTask(task);
         };
 
         function handleErrors(errObj) {

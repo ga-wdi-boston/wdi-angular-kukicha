@@ -8,23 +8,23 @@
 </head>
 <body ng-app="TaskManager">
 
-<div class="container" ng-controller="TaskCtrl as taskCtrl">
+<div class="container">
     <h2>Tasks</h2>
     
-	<ul>
-	    <li ng-repeat="task in taskCtrl.tasks">{{ task.name }} <a ng-click="taskCtrl.editTask(task)">update</a> <a ng-click="taskCtrl.deleteTask(task)">delete</a></li>
+	<ul ng-controller="TaskListCtrl as taskListCtrl">
+	    <li ng-repeat="task in taskListCtrl.tasks">{{ task.name }} <a ng-click="taskListCtrl.editTask(task)">update</a> <a ng-click="taskListCtrl.deleteTask(task)">delete</a></li>
 	</ul>
 
-    <form role="form" name="upsertTaskForm" ng-submit="taskCtrl.upsertTask(taskCtrl.task)" novalidate>
+    <form role="form" name="upsertTaskForm" ng-submit="taskFormCtrl.upsertTask(taskFormCtrl.task)" novalidate ng-controller="TaskFormCtrl as taskFormCtrl">
         
-        <div class="alert alert-danger alert-dismissible" role="alert" ng-show="taskCtrl.serverErrors">
+        <div class="alert alert-danger alert-dismissible" role="alert" ng-show="taskFormCtrl.serverErrors">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            {{ taskCtrl.serverErrorMsg }}
+            {{ taskFormCtrl.serverErrorMsg }}
         </div>
         
         <div class="form-group">
             <label>Name</label>
-            <input type="text" class="form-control" name="name" ng-model="taskCtrl.task.name" ng-model-options="{ updateOn: 'submit' }">
+            <input type="text" class="form-control" ng-model="taskFormCtrl.task.name">
         </div>
 
         <button type="submit" class="btn btn-primary" ng-disabled="upsertTaskForm.$invalid">Submit</button>
@@ -41,7 +41,8 @@
 <script src="js/factories/taskFactory.js"></script>
 
 <!-- controllers -->
-<script src="js/controllers/taskCtrl.js"></script>
+<script src="js/controllers/taskListCtrl.js"></script>
+<script src="js/controllers/taskFormCtrl.js"></script>
 
 </body>
 </html>

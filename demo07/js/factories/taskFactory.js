@@ -9,6 +9,11 @@
 
     function TaskFactory($http, ServerUrl) {
         var tasks = [];
+        var task = {};
+
+        function setTask(task) {
+            task = task;
+        }
 
         function getTasks() {
             return $http.get(ServerUrl + '/tasks')
@@ -48,6 +53,8 @@
         }
 
         return {
+            setTask: setTask,
+            task: task,
             tasks: tasks,
             getTasks: getTasks,
             upsertTask: upsertTask,
