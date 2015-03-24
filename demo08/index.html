@@ -8,13 +8,13 @@
 <body ng-app="Demo">
 
 <div class="container" ng-controller="MainCtrl as mainCtrl">
-    <ga-lorem greeting="hi" name="Dan"></ga-lorem>
+    <ga-lorem greeting="hi" person="mainCtrl.person"></ga-lorem>
 
-    <ga-button value="Click here"></ga-button>
+    <ga-button value="Button"></ga-button>
 
     <br><br>
 
-    <ga-another-button value="Click here" click-action="mainCtrl.clickAction(value)"></ga-another-button>
+    <ga-another-button value="Another Button" click-action="mainCtrl.clickAction(value)"></ga-another-button>
 </div>
 
 <script src="js/app.js"></script>

@@ -14,6 +14,10 @@
     function MainCtrl() {
         var vm = this;
 
+        vm.person = {
+            name: 'Dan'
+        };
+
         vm.clickAction = function(value) {
             alert(value);
         };
@@ -27,7 +31,7 @@
 
             scope: {
                 greeting: '@', // one way, outside in
-                name: '@'
+                person: '='
             }
         };
     }
