@@ -24,7 +24,6 @@
             restrict: 'E',
             templateUrl: 'templates/gaTaskList.html',
             scope: {
-                categories: '=',
                 tasks: '='
             },
             controller: gaTaskListCtrl,

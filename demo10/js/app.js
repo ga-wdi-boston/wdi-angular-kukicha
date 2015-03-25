@@ -6,7 +6,8 @@
     angular
         .module('Demo')
         .config(demoConfig)
-        .controller('NavbarCtrl', NavbarCtrl);
+        .controller('NavbarCtrl', NavbarCtrl)
+        .controller('FooterCtrl', FooterCtrl);
 
     function demoConfig($routeProvider) {
         $routeProvider
@@ -31,6 +32,16 @@
 
         vm.isActive = function(viewLocation) {
             return viewLocation === $location.path();
+        };
+    }
+
+    FooterCtrl.$inject = ['$location'];
+
+    function FooterCtrl($location) {
+        var vm = this;
+
+        vm.isContactPage = function() {
+            return '/contact' === $location.path();
         };
     }
 
