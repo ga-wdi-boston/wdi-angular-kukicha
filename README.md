@@ -1,10 +1,12 @@
 WDI Angular
 ===========
 
+### Instructions to run demos
+
 - Run `bower install` in the directory to install required JS libraries. 
 - Run `http-server ./` in the directory and then open [http://localhost:8080](http://localhost:8080) in your browser. Press `control-c` to stop the server.
 
-### Demo 01
+## Demo 01
 
 - ng-app
 - ng-init
@@ -15,7 +17,7 @@ WDI Angular
 
 Create a simple calculator that allows you to add two numbers. Hint: you may need to use number inputs!
 
-### Demo 02
+## Demo 02
 
 - ng-controller
 - ng-repeat	
@@ -26,7 +28,7 @@ Create a simple calculator that allows you to add two numbers. Hint: you may nee
 
 Using a controller, create a task list where each task has a name. Use ng-repeat to display these items in a HTMl list.
 
-### Demo 03
+## Demo 03
 
 - filters
 
@@ -34,7 +36,7 @@ Using a controller, create a task list where each task has a name. Use ng-repeat
 
 With a partner, create a filter for your task list.
 
-### Demo 04
+## Demo 04
 
 - bootstrap
 - forms and basic validation
@@ -45,7 +47,7 @@ With a partner, create a filter for your task list.
 
 Create a form so that you can add items to your task list.
 
-### Demo 05
+## Demo 05
 
 - controller dependencies
 - $http
@@ -68,7 +70,7 @@ Task
 
 Update your Angular app so that it pulls in tasks from the API.
 
-### Demo 06
+## Demo 06
 
 - CRUD for categories
 - ng-click
@@ -77,11 +79,11 @@ Update your Angular app so that it pulls in tasks from the API.
 
 CRUD for tasks
 
-### Demo 07
+## Demo 07
 
 - Instructor lead refactor using factories and controllers
 
-### Demo 08
+## Demo 08
 
 - directives
     - templates, bindings, actions
@@ -90,12 +92,12 @@ CRUD for tasks
 
 Create your own element directives (template, property, action)
 
-### Demo 09
+## Demo 09
 
 - directives
     - controllers
 
-### Demo 09
+## Demo 09
 
 - ng-include
 - ng-view
