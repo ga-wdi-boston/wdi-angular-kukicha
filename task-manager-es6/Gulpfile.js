@@ -31,7 +31,3 @@ gulp.task('default', ['browserify'], function() {
 gulp.task('watch', function() {
     gulp.watch('js/**/*.js', ['default']);
 });
-
-gulp.on('error', function(err){
-  console.log(err);
-});
